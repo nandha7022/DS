@@ -7,7 +7,7 @@ export class CoreConfigService {
 
   constructor() { }
 
-  private readonly baseUrl: string = 'https://competationhoster.azurewebsites.net/';
+  private readonly baseUrl: string = '';
 
   getBaseUrl(): string {
     return this.baseUrl;
