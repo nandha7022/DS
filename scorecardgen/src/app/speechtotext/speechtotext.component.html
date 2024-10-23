@@ -1,0 +1,10 @@
+<!-- speech-to-text.component.html -->
+<body>
+    <div class="comment-section">
+        <textarea id="comment" (ngModel)="commentText" rows="4" cols="50"></textarea>
+        <button (click)="toggleSpeechRecognition()">
+          <i class="fas fa-microphone" ngClass="{ 'active': isListening }">speak and stop </i>
+        </button>
+      </div>
+      <p>{{text}}
+</body>

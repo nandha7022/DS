@@ -1,0 +1,949 @@
+<div id="there-you-go" xmlns="http://www.w3.org/1999/html">
+    <style data-emotion-css="1j5hrwi">
+        .css-1j5hrwi {
+            position: relative;
+            overflow-y: auto;
+        }
+    </style>
+    <div *ngIf="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+      </div>
+
+      <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+
+    <div class="css-1j5hrwi">
+        <main>
+            <style data-emotion-css="5czy92">
+                .css-5czy92 {
+                    margin-top: 2.5vw;
+                }
+                @media screen and (min-width:64em) {
+                    .css-5czy92 {
+                        display: -webkit-box;
+                        display: -webkit-flex;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-flex-direction: row;
+                        -ms-flex-direction: row;
+                        flex-direction: row;
+                    }
+                }
+            </style>
+            <div class="css-5czy92">
+                <style data-emotion-css="1cc2js5">
+                    @media screen and (min-width:64em) {
+                        .css-1cc2js5 {
+                            display: -webkit-box;
+                            display: -webkit-flex;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-flex-direction: column;
+                            -ms-flex-direction: column;
+                            flex-direction: column;
+                        }
+                    }
+                </style>
+                <div class="css-1cc2js5">
+                    <style data-emotion-css="w10m3q">
+                        @media screen and (max-width:63.9em) {
+                            .css-w10m3q {
+                                display: -webkit-box;
+                                display: -webkit-flex;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-flex-direction: row;
+                                -ms-flex-direction: row;
+                                flex-direction: row;
+                            }
+                        }
+                    </style>
+                    <div class="css-w10m3q">
+                        <style data-emotion-css="6nvtdu">
+                            .css-6nvtdu {
+                                border-radius: 8px;
+                                overflow: hidden;
+                                width: 0;
+                                display: inline-block;
+                            }
+
+                            @media screen and (max-width:34.9em) {
+                                .css-6nvtdu {
+                                    border-radius: 0;
+                                }
+                            }
+
+                            @media screen and (max-width:34.9em) {
+                                .css-6nvtdu {
+                                    width: 88vw;
+                                    height: 100%;
+                                }
+                            }
+
+                            @media screen and (min-width:35em) and (max-width:63.9em) {
+                                .css-6nvtdu {
+                                    width: 57.900000000000006vw;
+                                    height: 100%;
+                                }
+                            }
+
+                            @media screen and (min-width:64em) {
+                                .css-6nvtdu {
+                                    width: 52.5vw;
+                                    height: 100%;
+                                }
+                            }
+
+                            @media screen and (min-width:100em) {
+                                .css-6nvtdu {
+                                    width: 840px;
+                                    height: 100%;
+                                }
+                            }
+
+                            .css-6nvtdu figure,
+                            .css-6nvtdu img,
+                            .css-6nvtdu video {
+                                width: 100%;
+                                min-height: 100%;
+                            }
+
+                            @media screen and (max-width:47.9em) {
+                                .css-6nvtdu {
+                                    width: 100vw;
+                                    height: 100%;
+                                }
+                            }
+
+                            @media screen and (max-width:34.9em) {
+                                .css-6nvtdu {
+                                    width: 88vw;
+                                    height: 100%;
+                                }
+                            }
+
+                            @media screen and (min-width:35em) and (max-width:63.9em) {
+                                .css-6nvtdu {
+                                    width: 57.900000000000006vw;
+                                    height: 100%;
+                                }
+                            }
+
+                            @media screen and (min-width:64em) {
+                                .css-6nvtdu {
+                                    width: 52.5vw;
+                                    height: 100%;
+                                }
+                            }
+
+                            @media screen and (min-width:100em) {
+                                .css-6nvtdu {
+                                    width: 840px;
+                                    height: 100%;
+                                }
+                            }
+
+                            .css-6nvtdu figure,
+                            .css-6nvtdu img,
+                            .css-6nvtdu video {
+                                width: 100%;
+                                min-height: 100%;
+                            }
+
+                            @media screen and (max-width:47.9em) {
+                                .css-6nvtdu {
+                                    width: 100vw;
+                                    height: 100%;
+                                }
+                            }
+
+                            @media screen and (min-width:64em) {
+                                .css-6nvtdu {
+                                    margin-left: 10vw !important;
+                                }
+                            }
+
+                            @media screen and (min-width:100em) {
+                                .css-6nvtdu {
+                                    margin-left: calc((100vw - 1280px)/2) !important;
+                                }
+                            }
+
+                            @media screen and (min-width:48em) {
+                                .css-6nvtdu {
+                                    margin-left: 3vw;
+                                }
+                            }
+                        </style>
+                        <div class="css-6nvtdu">
+                            <style data-emotion-css="79elbk">
+                                .css-79elbk {
+                                    position: relative;
+                                }
+                            </style>
+                            <div class="css-79elbk">
+                                <figure >
+                                    <picture>
+                                      <img data-testid="ad-banner-image"
+                                           data-ref="edp_event_banner_image"
+                                           src="{{EventData.eventImageUrl}}"
+                                           alt="{{EventData.eventTitle}} {{EventData.eventVenue}}"
+                                           style="width: 100%; height: 100%; display: block; object-fit: cover;">
+                                    </picture>
+                                </figure>
+                            </div>
+                        </div>
+                        <style data-emotion-css="1pvnlqm">
+
+                        </style>
+                      <style data-emotion-css="1gxwuw0">
+                        .css-1gxwuw0 {
+                          display: inline-block;
+                          vertical-align: top;
+                        }
+
+                        @media screen and (min-width:48em) and (max-width:63.9em) {
+                          .css-1gxwuw0 {
+                            display: inline-block;
+                          }
+                        }
+
+                        @media screen and (max-width:34.9em) {
+
+                        }
+
+                        @media screen and (min-width:35em) and (max-width:47.9em) {
+
+                        }
+                      </style>
+                      <style data-emotion-css="1k23y97">
+                        .css-1k23y97 {
+                          width: 0;
+                          overflow: visible !important;
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                          .css-1k23y97 {
+                            margin-bottom: 30px !important;
+                          }
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                          .css-1k23y97 {
+                            margin-left: 4vw;
+                          }
+                        }
+
+                        @media screen and (min-width:35em) {
+                          .css-1k23y97 {
+                            margin-left: 3vw;
+                          }
+                        }
+
+                        @media screen and (min-width:64em) {
+                          .css-1k23y97 {
+                            margin-left: 2.5vw;
+                          }
+                        }
+
+                        @media screen and (min-width:100em) {
+                          .css-1k23y97 {
+                            margin-left: 40px;
+                          }
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                          .css-1k23y97 {
+                            width: 88vw;
+                          }
+                        }
+
+                        @media screen and (min-width:35em) and (max-width:63.9em) {
+                          .css-1k23y97 {
+                            width: 33.099199999999996vw;
+                          }
+                        }
+
+                        @media screen and (min-width:64em) {
+                          .css-1k23y97 {
+                            width: 25vw;
+                          }
+                        }
+
+                        @media screen and (min-width:100em) {
+                          .css-1k23y97 {
+                            width: 400px;
+                          }
+                        }
+
+                        @media screen and (max-width:47.9em) {
+                          .css-1k23y97 {
+                            padding-left: 0;
+                            padding-right: 0;
+                            padding-bottom: 0;
+                            margin: 0 auto;
+                          }
+                        }
+
+                        @media screen and (min-width:35em) and (max-width:47.9em) {
+                          .css-1k23y97 {
+                            width: 84vw;
+                          }
+                        }
+
+                        @media screen and (min-width:48em) {
+                          .css-1k23y97 {
+                            position: relative;
+                            display: inline-block;
+                            vertical-align: top;
+                            height: 31.67781155015198vw;
+                            overflow: hidden;
+                          }
+                        }
+
+                        @media screen and (min-width:64em) {
+                          .css-1k23y97 {
+                            height: 28.72340425531915vw;
+                            padding-bottom: initial;
+                          }
+                        }
+
+                        @media screen and (min-width:80em) {
+                          .css-1k23y97 {
+                            padding-bottom: initial;
+                          }
+                        }
+
+                        @media screen and (min-width:100em) {
+                          .css-1k23y97 {
+                            height: 459.5744680851064px;
+                            padding-bottom: initial;
+                          }
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                          .css-1k23y97 {
+                            margin-left: 4vw;
+                          }
+                        }
+
+                        @media screen and (min-width:35em) {
+                          .css-1k23y97 {
+                            margin-left: 3vw;
+                          }
+                        }
+
+                        @media screen and (min-width:64em) {
+                          .css-1k23y97 {
+                            margin-left: 2.5vw;
+                          }
+                        }
+
+                        @media screen and (min-width:100em) {
+                          .css-1k23y97 {
+                            margin-left: 40px;
+                          }
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                          .css-1k23y97 {
+                            width: 88vw;
+                          }
+                        }
+
+                        @media screen and (min-width:35em) and (max-width:63.9em) {
+                          .css-1k23y97 {
+                            width: 33.099199999999996vw;
+                          }
+                        }
+
+                        @media screen and (min-width:64em) {
+                          .css-1k23y97 {
+                            width: 25vw;
+                          }
+                        }
+
+                        @media screen and (min-width:100em) {
+                          .css-1k23y97 {
+                            width: 400px;
+                          }
+                        }
+
+                        @media screen and (max-width:47.9em) {
+                          .css-1k23y97 {
+                            padding-left: 0;
+                            padding-right: 0;
+                            padding-bottom: 0;
+                            margin: 0 auto;
+                          }
+                        }
+
+                        @media screen and (min-width:35em) and (max-width:47.9em) {
+                          .css-1k23y97 {
+                            width: 84vw;
+                          }
+                        }
+
+                        @media screen and (min-width:48em) {
+                          .css-1k23y97 {
+                            position: relative;
+                            display: inline-block;
+                            vertical-align: top;
+                            height: 31.67781155015198vw;
+                            overflow: hidden;
+                          }
+                        }
+
+                        @media screen and (min-width:64em) {
+                          .css-1k23y97 {
+                            height: 28.72340425531915vw;
+                            padding-bottom: initial;
+                          }
+                        }
+
+                        @media screen and (min-width:80em) {
+                          .css-1k23y97 {
+                            padding-bottom: initial;
+                          }
+                        }
+
+                        @media screen and (min-width:100em) {
+                          .css-1k23y97 {
+                            height: 459.5744680851064px;
+                            padding-bottom: initial;
+                          }
+                        }
+
+                        @media screen and (min-width:48em) {
+                          .css-1k23y97 {
+                            margin-bottom: 0;
+                          }
+                        }
+
+                        @media screen and (min-width:64em) {
+                          @supports (position:sticky) or (position:-webkit-sticky) {
+                            .css-1k23y97 {
+                              position: -webkit-sticky;
+                              position: sticky;
+                              position: -webkit-sticky;
+                              background-color: #fff;
+                              z-index: 10;
+                              height: auto;
+                            }
+                          }
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                          .css-1k23y97 {
+                            margin-bottom: 2vw;
+                          }
+                        }
+                      </style>
+                      <style data-emotion-css="b3qn21">
+
+                          .css-b3qn21 {
+                            padding: 18px;
+                            border-radius: 8px;
+                            border: 1px solid #e1e3e6;
+                          }
+
+                      </style>
+                      <style data-emotion-css="qxlnel">
+                          .css-qxlnel {
+                            margin-top: 18px;
+                            padding: 18px;
+                            border-radius: 8px;
+                            border: 1px solid #e1e3e6;
+                            display: block;
+                          }
+                      </style>
+                      <style data-emotion-css="1qhowen">
+                        .css-1qhowen {
+
+                          position: relative;
+                          margin: 18px;
+                          margin-top: 30px;
+                        }
+
+                        @media screen and (min-width:64em) {
+                          .css-1qhowen {
+                            display: -webkit-box;
+                            display: -webkit-flex;
+                            display: -ms-flexbox;
+                            display: flex;
+                          }
+                        }
+                      </style>
+                      <style data-emotion-css="k008qs">
+                        .css-k008qs {
+                          display: -webkit-box;
+                          display: -webkit-flex;
+                          display: -ms-flexbox;
+                          display: flex;
+                        }
+                      </style>
+                      <style data-emotion-css="15yjbxw">
+                        .css-15yjbxw {
+                          font-size: 14px;
+                          line-height: 16px;
+                          color: #202226;
+                          font-weight: 500;
+                        }
+                      </style>
+                      <style data-emotion-css="1mg2664">
+                        .css-1mg2664 {
+                          font-size: 21px;
+                          font-weight: bold;
+                          font-stretch: normal;
+                          font-style: normal;
+                          line-height: 29px;
+                          -webkit-letter-spacing: normal;
+                          -moz-letter-spacing: normal;
+                          -ms-letter-spacing: normal;
+                          letter-spacing: normal;
+                          color: #0D0F13;
+                          padding-right: 12px;
+                          word-break: break-word;
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                          .css-1mg2664 {
+                            font-size: 21px;
+                            line-height: 22px;
+                            -webkit-flex: 4;
+                            -ms-flex: 4;
+                            flex: 4;
+                          }
+                        }
+                      </style>
+                      <style data-emotion-css="1qfo63q">
+                        .css-1qfo63q {
+                          font-size: 16px;
+                          margin-bottom: 18px;
+                          font-weight: bold;
+                          display: flex; /* Enable Flexbox layout */
+                          justify-content: space-between; /* Distribute space between items */
+                          align-items: center; /* Center items vertically */
+                        }
+
+                        .css-1pd9njl {
+                          width: 20px; /* Set a fixed width for the icon */
+                          height: auto; /* Maintain aspect ratio */
+                          cursor: pointer; /* Optional: Change cursor to pointer for better UX */
+                        }
+                      </style>
+
+                    </div>
+                    <style data-emotion-css="31oj63">
+                        .css-31oj63 {
+                            width: 50%;
+                            margin-left: 10vw;
+                            margin-top: 30px;
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                            .css-31oj63 {
+                                width: 100%;
+                                padding: 0 18px;
+                                margin-left: auto;
+                                margin-right: auto;
+                                margin-top: 24px;
+                            }
+                        }
+
+                        @media screen and (min-width:35em) and (max-width:63.9em) {
+                            .css-31oj63 {
+                                width: 84vw;
+                                margin: 0 auto;
+                                margin-left: auto;
+                                margin-right: auto;
+                                margin-top: 30px;
+                            }
+                        }
+
+                        @media screen and (min-width:64em) {
+                            .css-31oj63 {
+                                width: 52.5vw;
+                                margin-left: 10vw;
+                            }
+                        }
+
+                        @media screen and (min-width:100em) {
+                            .css-31oj63 {
+                                margin-left: calc((100vw - 1280px)/2);
+                                width: 840px;
+                            }
+                        }
+
+                        .css-31oj63 .tab-content {
+                            margin-top: 30px;
+                        }
+
+                        .css-31oj63 .react-tabs__tab-list {
+                            padding: 0;
+                            border-bottom: 1px solid #eee;
+                            display: block;
+                            position: relative;
+                            height: 35px;
+                            white-space: nowrap;
+                            text-align: initial;
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                            .css-31oj63 .react-tabs__tab-list {
+                                height: 28px;
+                                width: 88vw;
+                                margin: 0 auto;
+                            }
+                        }
+
+                        .css-31oj63 .react-tabs__tab-list li {
+                            display: inline-block;
+                            position: relative;
+                            width: auto;
+                            height: 100%;
+                            text-align: center;
+                            overflow: hidden;
+                            font-weight: 400;
+                            cursor: pointer;
+                            line-height: 60px;
+                            color: #abadb3;
+                            margin-right: 30px;
+                            font-size: 21px;
+                            line-height: 28px;
+                        }
+
+                        @media screen and (max-width:34.9em) {
+                            .css-31oj63 .react-tabs__tab-list li {
+                                font-size: 16px;
+                                line-height: 22px;
+                            }
+                        }
+
+                        .css-31oj63 .react-tabs__tab-list .active-tab {
+                            color: #0D0F13;
+                            border-bottom: 2px solid #000000;
+                        }
+                    </style>
+                    <div class="css-31oj63" data-tabs="false">
+                        <ul role="tablist" class="react-tabs__tab-list">
+                            <li class="react-tabs__tab active-tab" role="tab" id="react-tabs-0" aria-selected="true"
+                                aria-disabled="false" aria-controls="react-tabs-1" tabindex="0">
+                                <style data-emotion-css="yoenp9">
+                                    .css-yoenp9 {
+                                        font-weight: 700;
+                                        display: inline-block;
+                                        height: 100%;
+                                    }
+                                </style><span class="css-yoenp9">About</span>
+                            </li>
+                        </ul>
+                        <div class="react-tabs__tab-panel tab-content" role="tabpanel" id="react-tabs-1"
+                            aria-labelledby="react-tabs-0">
+                            <div>
+                                <style data-emotion-css="k0vv7i">
+
+
+                                    @media screen and (max-width:34.9em) {
+                                        .css-k0vv7i {
+                                            display: block;
+                                        }
+                                    }
+
+                                    @media screen and (min-width:35em) and (max-width:47.9em) {
+                                        .css-k0vv7i {
+                                            display: block;
+                                        }
+                                    }
+                                </style>
+                                <style data-emotion-css="gsyh3k">
+                                    .css-gsyh3k {
+                                        margin: 30px auto;
+                                    }
+
+                                    @media screen and (min-width:64em) {
+
+                                    }
+                                </style>
+                                <style data-emotion-css="3loask">
+                                    .css-3loask {
+                                        margin-top: 30px;
+                                    }
+
+                                    @media screen and (min-width:64em) {
+
+                                    }
+                                </style>
+                              <style data-emotion-css="end10d">
+                                .css-end10d {
+                                  margin-top: 30px;
+                                }
+                              </style>
+                                <section class="text text-left css-19okvs3"></section>
+                                <style data-emotion-css="twmkck">
+                                    .css-twmkck span {
+                                        font-size: 19px;
+                                        margin-bottom: 30px;
+                                        margin-top: 30px;
+                                        font-weight: bold;
+                                        color: #202226;
+                                        display: block;
+                                    }
+
+                                </style>
+                                <section class="text text-left css-twmkck"><span>About the Event</span></section>
+                                <style data-emotion-css="1rmq8t0">
+                                    .css-1rmq8t0 span {
+                                        font-size: 19px;
+                                        margin-bottom: 30px;
+                                        margin-top: 30px;
+                                        font-weight: bold;
+                                        color: #202226;
+                                        display: block;
+                                    }
+
+                                    @media screen and (min-width:48em) {
+                                        .css-1rmq8t0 span {
+                                            font-size: 21px;
+                                        }
+                                    }
+                                </style>
+                              <section class="text text-left css-1rmq8t0">
+                                <p><strong>Competition Duration: </strong></p>
+
+                                <input [readonly]="HostAccess !== 'true'"    [(ngModel)]="EventData.EventAboutSec.competitionDuration"  style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;"/>
+                                <br /><br />
+                                <p><strong>Competition Highlights :</strong></p><br />
+                                <ul >
+                                  <ul>
+                                    <li *ngFor="let highlight of EventData.EventAboutSec.competitionHighlights; let i = index" >
+                                      <input
+                                        [readonly]="HostAccess !== 'true'" [(ngModel)]="EventData.EventAboutSec.competitionHighlights[i]"    style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;"
+                                      />
+                                    </li>
+                                  </ul>
+
+                                </ul>
+
+                                <button *ngIf="HostAccess === 'true'"(click)="addCompetitionHighlights()">Add</button><br />
+
+                                <p><strong>Competition Terms & Conditions:</strong></p><br />
+                                <div class="css-1azmw3s">
+                                  <ul  >
+                                    <li *ngFor="let condition of EventData.EventAboutSec.competitionConditions; let i = index">
+                                      <input
+                                        [readonly]="HostAccess !== 'true'"
+                                        [(ngModel)]="EventData.EventAboutSec.competitionConditions[i]" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;"
+                                      />
+                                    </li>
+                                  </ul>
+
+                                  <button *ngIf="HostAccess === 'true'" (click)="addNewCondition()">Add Condition</button>
+                                </div><br />
+
+                                <p><strong>For Entry:</strong></p><br />
+                                <ul >
+                                  <li *ngFor="let rule of EventData.EventAboutSec.forEntryRules; let i = index">
+                                    <input
+                                      [readonly]="HostAccess !== 'true'"
+                                      [(ngModel)]="EventData.EventAboutSec.forEntryRules[i]" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;"
+                                    />
+                                  </li>
+                                </ul>
+
+                                <button *ngIf="HostAccess === 'true'" (click)="addforEntryRules()">Add</button><br /><br />
+                              </section>
+                              <section id="section-venue" class="venue-wrapper">
+                                <section class="text text-left custom-widget-title css-1rmq8t0">
+                                  <span>Venue</span>
+                                </section>
+                                <section class="text text-align-left custom-widget-title">
+                                  <input
+                                    [readonly]="HostAccess !== 'true'"
+                                    [(ngModel)]="EventData.EventAboutSec.venue"
+                                    style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;"
+                                  />
+                                </section>
+                                <br />
+                                <section *ngIf="HostAccess === 'true'" class="text text-align-left custom-widget-title" >
+                                  <input
+                                    [readonly]="HostAccess !== 'true'"
+                                    [(ngModel)]="EventData.EventAboutSec.directionUrl"
+                                    style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;"
+                                  />
+                                </section>
+                                <br />
+                                <a class="css-1gl7gat" [href]="EventData.EventAboutSec.directionUrl" target="_blank">
+                                  <span class="css-159jbjj">GET DIRECTIONS</span>
+                                </a>
+                              </section>
+
+                              <button *ngIf="HostAccess === 'true'" (click)="saveadout( )">Save About Section</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style data-emotion-css="1cyi4oq">
+                    @media screen and (min-width:64em) {
+                        .css-1cyi4oq {
+                            display: -webkit-box;
+                            display: -webkit-flex;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-flex-direction: column;
+                            -ms-flex-direction: column;
+                            flex-direction: column;
+                        }
+                    }
+
+                    @media screen and (max-width:63.9em) {
+
+                    }
+                </style>
+                <div class="css-1cyi4oq">
+                    <div class="css-1gxwuw0">
+                        <div class=" css-1k23y97">
+                            <div class="css-b3qn21" >
+                                <div class="css-k008qs" *ngIf="HostAccess === 'true'">
+                                    <div class="toggle-container" >
+                                        <div class="toggle-switch" [class.active]="isLive" (click)="toggleLive()">
+                                          <div class="toggle-handle"></div>
+                                        </div>
+                                        <span>Live</span>
+                                        <div class="toggle-switch orange" [class.active]="isCompleted" (click)="toggleCompleted()">
+                                          <div class="toggle-handle"></div>
+                                        </div>
+                                        <span>Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="css-b3qn21" >
+                            <div class="css-k008qs" >
+                              <div>
+                                <!-- Editable Event Title -->
+                                <input type="text"  [readonly]="HostAccess !== 'true'"    [(ngModel)]="EventData.eventTitle" placeholder="Event Title"              style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;" />
+
+                                <div class="css-1yoi8sp">
+                                  <div class="css-1jbz40t">
+                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.86772 1.09399H12.1773C13.1793 1.09399 14 1.8863 14 2.84628V14.7306C14 15.5316 13.4747 16.094 12.7593 16.094C12.4131 16.094 12.0908 15.9579 11.7975 15.7158L8.09161 12.6643C8.08867 12.6619 8.06217 12.6531 8.02796 12.6531C8.0165 12.6531 8.00588 12.6541 7.99667 12.6555L7.96295 12.6651L4.24659 15.7157C3.95542 15.9562 3.61666 16.094 3.27026 16.094C2.87019 16.094 2.49709 15.9072 2.26744 15.5886C2.09267 15.346 2 15.051 2 14.7305V2.84628C2 1.88762 2.86383 1.09399 3.86772 1.09399ZM12.1792 2.2478H3.86955C3.51157 2.2478 3.19531 2.53836 3.19531 2.84624V14.7305C3.19531 14.8188 3.21555 14.8832 3.2485 14.9289C3.25409 14.9367 3.26093 14.9401 3.27209 14.9401C3.31322 14.9401 3.38574 14.9106 3.47462 14.8372L7.19099 11.7866C7.41788 11.5993 7.7208 11.4992 8.0298 11.4992C8.33882 11.4992 8.64138 11.5993 8.86789 11.7864L12.5737 14.8378C12.6668 14.9146 12.7272 14.9401 12.7612 14.9401C12.7887 14.9401 12.8084 14.9191 12.8084 14.7305V2.84624C12.8084 2.5239 12.5224 2.2478 12.1792 2.2478Z"
+                                            fill="#0C172F"></path>
+                                      <path d="M3.64453 5.59389H13.3588" stroke="#0C172F" stroke-linecap="square"></path>
+                                    </svg>
+                                  </div>
+                                  <div *ngIf="HostAccess === 'true'" >
+                                  <div  *ngFor="let text of EventData.eventCategory; let i = index; trackBy: trackByIndex">
+                                    <input  type="text"  [readonly]="HostAccess !== 'true'" [(ngModel)]="EventData.eventCategory[i]" placeholder="Enter text {{i + 1}}" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;" />
+                                    <button (click)="removeTextField(i)" *ngIf="HostAccess === 'true'" >Remove</button>
+                                  </div>
+                                  </div>
+                                  <button (click)="addTextField()" *ngIf="HostAccess === 'true'">Add Category</button>
+
+                                  <div>
+                                    <p>Category's  List:</p>
+                                    <ul>
+                                      <li *ngFor="let text of EventData.eventCategory">{{ text }}</li>
+                                    </ul>
+                                  </div>
+                                  <!-- Editable Event Category -->
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <div class="css-ois8gk">
+                                <div class="css-1jbz40t">
+                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M2.6 2.35278H13.6C14.4837 2.35278 15.2 3.02699 15.2 3.85867V14.2116C15.2 15.0433 14.4837 15.7175 13.6 15.7175H2.6C1.71634 15.7175 1 15.0433 1 14.2116V3.85867C1 3.02699 1.71634 2.35278 2.6 2.35278ZM13.6 3.4822H2.6C2.37909 3.4822 2.2 3.65075 2.2 3.85867V14.2116C2.2 14.4195 2.37909 14.5881 2.6 14.5881H13.6C13.8209 14.5881 14 14.4195 14 14.2116V3.85867C14 3.65075 13.8209 3.4822 13.6 3.4822Z"
+                                          fill="#0C172F"></path>
+                                    <rect x="4" y="1.41162" width="1" height="2.82353" rx="0.5" fill="#0C172F"></rect>
+                                    <rect x="11" y="1.41162" width="1" height="2.82353" rx="0.5" fill="#0C172F"></rect>
+                                    <path d="M15.0984 6.02344V7.15285H1.89844V6.02344H15.0984Z" fill="#0C172F"></path>
+                                  </svg>
+                                </div>
+                                <!-- Editable Event Date -->
+                                <input type="text" class="css-1uf8g5w" [readonly]="HostAccess !== 'true'" [(ngModel)]="EventData.eventDateString" placeholder="Event Date" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;" />
+                              </div>
+                              <div class="css-ois8gk">
+                                <div class="css-1jbz40t">
+                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0)">
+                                      <circle cx="8" cy="6" r="2.4" stroke="#0C172F" stroke-width="1.2"></circle>
+                                      <path d="M10.3321 1.50978C11.6159 2.15878 12.3811 2.91313 12.7821 3.72799C13.1818 4.54032 13.2556 5.48641 13.0179 6.59004C12.5337 8.83735 10.7951 11.5732 8.29618 14.6878C8.14421 14.8773 7.85561 14.8773 7.70364 14.6878C5.20507 11.5733 3.46656 8.83741 2.98235 6.5901C2.74455 5.48646 2.81836 4.54036 3.21795 3.72804C3.61878 2.91319 4.38385 2.15886 5.66738 1.50987C7.11906 0.775855 8.88039 0.77585 10.3321 1.50978Z"
+                                            stroke="#0C172F" stroke-width="1.2"></path>
+                                    </g>
+                                    <defs>
+                                      <clipPath id="clip0">
+                                        <rect width="16" height="16" fill="white"></rect>
+                                      </clipPath>
+                                    </defs>
+                                  </svg>
+                                </div>
+                                <!-- Editable Event Venue -->
+                                <input type="text" class="css-1uf8g5w"  [readonly]="HostAccess !== 'true'"[(ngModel)]="EventData.eventVenue" placeholder="Event Venue" style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: white;" />
+                              </div>
+                            </div>
+                            <div aria-label="BUY NOWbuttonDouble tap to activate" role="region" class="css-kccjyv">
+                              <div class="css-1sn6u2x">
+                                <div class="css-uo4b3v">
+                                  <div class="css-2tezne">
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M7.19245 5.52309L6.94257 0.691558H3.37441V2.21249H5.16386L4.92473 5.52309H7.19245Z"
+                                            fill="white"></path>
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                              <button class="css-15yjbxw" (click)="saveEventData()">Save Event</button>
+                            </div>
+                          </div>
+
+                          <div class="css-qxlnel">
+                                <div class="css-1qfo63q">
+                                    Teams Information
+                                    <img src="/assets/icons/add-profile.svg" alt="+" srcset="" class="css-1pd9njl" (click)="updateTeam()">
+                                  </div>
+
+                                <div class="css-12527f7"></div>
+                                <div class="css-1qo6c03">
+                                    <div class="css-1a9ozol">
+                                        <div>
+                                            <p class="css-1oqavfg" *ngFor="let team of TeamsInfo; let i = index">{{team.teamName.name}}</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="css-qxlnel" >
+                                <div class="css-1qfo63q">
+                                    Judges Information
+                                    <img src="/assets/icons/add-profile.svg" alt="+" srcset="" class="css-1pd9njl" (click)="updateJudges()">
+                                  </div>
+                                <div class="css-12527f7"></div>
+                                <div class="css-1qo6c03">
+                                    <div class="css-1a9ozol">
+                                        <div>
+                                            <p class="css-1oqavfg" *ngFor="let judge of JudegsInfo; let i = index">{{judge.name}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-qxlnel"><div class="css-5m1des"><a
+                                data-ref="edp_buy_button_desktop" (click)="NavigateEventSchedule()" class="css-10lu0qa">View and Update Event Schedule</a></div></div>
+                            <div class="css-qxlnel" *ngIf="HostAccess === 'true'"><div class="css-5m1des"><a
+                                data-ref="edp_buy_button_desktop" (click)="NavigateToAccessTokens()" class="css-10lu0qa">Get Access Tokens</a></div></div>
+                                <div class="css-qxlnel" *ngIf="HostAccess === 'true'"><div class="css-5m1des"><a
+                                    data-ref="edp_buy_button_desktop" *ngIf="HostAccess === 'true'" (click)="NavigateToLeadBord()" class="css-10lu0qa">View Lead Bord</a></div></div>
+                                <div class="css-qxlnel" *ngIf="HostAccess === 'true'"><div class="css-5m1des"><a
+                                    data-ref="edp_buy_button_desktop" (click)="saveandNavifatetoScoreCard()" class="css-10lu0qa">Configur ScoreCard</a></div></div>
+                            <div class="css-qxlnel"><div class="css-5m1des"><a
+                                data-ref="edp_buy_button_desktop" (click)="NavigateToScoreCard()" class="css-10lu0qa">Navigate to Score Card</a></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="carousel-container" *ngIf="items && items.length > 0">
+    <section class="banner-carousel">
+        <div class="carousel">
+            <a href="#" class="carousel-prev" (click)="prevSlide()">
+                <span><svg width="12" height="14" viewBox="0 0 12 22" fill="#0c172f" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.8995 2.51707C11.29 2.12655 11.29 1.49338 10.8995 1.10286C10.509 0.712334 9.8758 0.712334 9.48528 1.10286L0.292888 10.2952C-0.0976366 10.6858 -0.0976363 11.3189 0.292888 11.7095L9.48528 20.9018C9.8758 21.2924 10.509 21.2924 10.8995 20.9018C11.29 20.5113 11.29 19.8782 10.8995 19.4876L2.41421 11.0024L10.8995 2.51707Z"
+                            fill="#0c172f"></path>
+                    </svg></span>
+            </a>
+            <a >
+                <div class="image-container">
+                    <picture>
+                        <source [src]="items[currentIndex].imageUrl">
+                        <img [src]="items[currentIndex].imageUrl" >
+                    </picture>
+                </div>
+            </a>
+            <a href="#" class="carousel-next" (click)="nextSlide()">
+                <span style="display: flex; align-items: center; justify-content: center;">
+                    <svg width="12" height="14" viewBox="0 0 12 22" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.10049 19.4876C0.709964 19.8782 0.709964 20.5113 1.10049 20.9018C1.49101 21.2924 2.1242 21.2924 2.51472 20.9018L11.7071 11.7095C12.0976 11.3189 12.0976 10.6858 11.7071 10.2952L2.51472 1.10286C2.1242 0.712334 1.49101 0.712334 1.10049 1.10286C0.709964 1.49338 0.709964 2.12655 1.10049 2.51707L9.58579 11.0024L1.10049 19.4876Z"></path>
+                    </svg>
+                </span>
+            </a>
+            <div class="carousel-dots">
+                <span *ngFor="let dot of items; let i = index" [class.active]="currentIndex === i"
+                    (click)="goToSlide(i)"></span>
+            </div>
+        </div>
+    </section>
+</div>

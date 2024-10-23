@@ -1,0 +1,171 @@
+.ui.container {
+  margin-top: 50px;
+}
+body{
+  margin-top: 50px;
+}
+/* Container for the entire scorecard configuration */
+.scorecard-config-container {
+  max-width: 95%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.scoring-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Improved grid layout for better responsiveness */
+.scoring-parameter-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto; /* Input fields take equal space; button adapts */
+  gap: 10px;
+}
+
+/* Adjustments to make the layout responsive */
+.form-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.add-button,
+.remove-button,
+.save-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+/* Styling for each type of button */
+.add-button {
+  background-color: #007bff;
+  color: #fff;
+  grid-column: span 4; /* Button spans across columns on smaller screens */
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: #fff;
+  margin-top: 20px;
+  width: 100%; /* Full-width button for easy tapping on mobile */
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+/* Notification styles */
+.notification {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 768px) {
+  .scoring-parameter-form {
+    grid-template-columns: 1fr; /* Stacks fields on smaller screens */
+  }
+
+  .add-button {
+    grid-column: 1 / -1; /* Full width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .form-input,
+  .add-button,
+  .save-button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .scorecard-config-container {
+    padding: 15px;
+  }
+}
+/* your-component.component.css */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it is above other content */
+}
+
+.loading-spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.success {
+  background-color: #4CAF50; /* Green */
+}
+
+.error {
+  background-color: #f44336; /* Red */
+}
+

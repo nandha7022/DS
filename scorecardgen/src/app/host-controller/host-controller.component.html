@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div
+    style="overflow: auto; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+    <!-- Main content container -->
+    <div style="flex: 1; width: 100%; display: flex; flex-direction: column; align-items: center;">
+      <!-- Loading Spinner -->
+      <div *ngIf="loading" class="loading-overlay">
+        <div class="loading-spinner"></div>
+      </div>
+
+      <!-- Success and Error Messages -->
+      <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+
+      <!-- Header -->
+      <h2 class="ui center aligned header">Host Access Requests</h2>
+
+      <!-- Host Requests Table -->
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Requested Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of hostRequests">
+            <td>{{ request.Email }}</td>
+            <td>{{ request.CreationDateTimeStamp }}</td>
+            <td>
+              <button class="approve-button" (click)="approveRequest(request)">Approve</button>
+              <button class="reject-button" (click)="rejectRequest(request)">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- No Requests Message -->
+      <p *ngIf="hostRequests.length === 0">No host requests available.</p>
+
+      <!-- Upload Image Header -->
+      <h2 class="ui center aligned header">Upload Image for Banner</h2>
+
+      <!-- File Upload Section -->
+      <div style="margin-top: 20px;">
+        <label>
+          <input type="file" accept="image/*" (change)="onFileSelected($event)" />
+        </label>
+      </div>
+
+      <!-- Image Preview - Visible only when an image is uploaded -->
+      <div *ngIf="imageUrl" style="margin-top: 20px;">
+        <h2 class="ui center aligned header">Preview Uploaded Image</h2>
+        <figure class="css-0">
+          <picture>
+            <img [src]="imageUrl" alt="Uploaded Image" data-testid="ad-banner-image" data-ref="edp_event_banner_image" />
+          </picture>
+        </figure>
+      </div>
+
+      <!-- Display Existing Banner Images -->
+      <h2 class="ui center aligned header">Existing Banners</h2>
+      <div class="banner-list" style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <div *ngFor="let banner of banners" class="banner-item" style="display: flex; flex-direction: column; align-items: center;">
+          <img [src]="banner.imageUrl" alt="Banner Image" style="width: 100px; height: 50px; object-fit: cover;"/>
+          <button class="remove-button" (click)="removeBanner(banner.BannerId)" style="margin-top: 5px;">Remove</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <footer class="about-section" style="width: 100%; text-align: center; padding: 10px; background-color: #f8f9fa;">
+      <p>About Us</p>
+      <p>This is The Judges Hub, a platform for scheduling events, adding participants, and scoring performances...</p>
+    </footer>
+  </div>
+</body>
+</html>

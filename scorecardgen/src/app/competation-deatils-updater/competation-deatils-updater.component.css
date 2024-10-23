@@ -1,0 +1,141 @@
+/* your-component.component.css */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Ensure it is above other content */
+  }
+  .css-79elbk {
+    position: relative;
+  }
+  .loading-spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .success {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .error {
+    background-color: #f44336; /* Red */
+  }
+  
+
+  .css-1j5hrwi {
+    position: relative;
+}
+.css-5czy92 {
+  margin-top: 2.5vw;
+}
+
+.css-6nvtdu {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 0;
+  display: inline-block;
+  width: 0;
+  display: inline-block;
+}
+
+@media screen and (max-width:34.9em) {
+  .css-6nvtdu {
+      border-radius: 0;
+  }
+}
+
+@media screen and (max-width:34.9em) {
+  .css-6nvtdu {
+      width: 88vw;
+      height: 48.14589665653495vw;
+  }
+}
+
+@media screen and (min-width:35em) and (max-width:63.9em) {
+  .css-6nvtdu {
+      width: 57.900000000000006vw;
+      height: 31.677811550151976vw;
+  }
+}
+
+@media screen and (min-width:64em) {
+  .css-6nvtdu {
+      width: 52.5vw;
+      height: 28.723404255319146vw;
+  }
+}
+
+@media screen and (min-width:100em) {
+  .css-6nvtdu {
+      width: 840px;
+      height: 459.57446808510633px;
+  }
+}
+
+.css-6nvtdu figure,
+.css-6nvtdu img,
+.css-6nvtdu video {
+  width: 100%;
+  min-height: 100%;
+}
+
+@media screen and (max-width:47.9em) {
+  .css-6nvtdu {
+      width: 100vw;
+      height: 54.7112462006079vw;
+  }
+}
+
+@media screen and (max-width:34.9em) {
+  .css-6nvtdu {
+      width: 88vw;
+      height: 48.14589665653495vw;
+  }
+}
+
+@media screen and (min-width:35em) and (max-width:63.9em) {
+  .css-6nvtdu {
+      width: 57.900000000000006vw;
+      height: 31.677811550151976vw;
+  }
+}
+
+@media screen and (min-width:64em) {
+  .css-6nvtdu {
+      width: 52.5vw;
+      height: 28.723404255319146vw;
+  }
+}
+
+@media screen and (min-width:100em) {
+  .css-6nvtdu {
+      width: 840px;
+      height: 459.57446808510633px;
+  }
+}

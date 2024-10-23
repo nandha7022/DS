@@ -1,0 +1,252 @@
+/* your-component.component.css */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Ensure it is above other content */
+  }
+
+  .loading-spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .success {
+    background-color: #4CAF50; /* Green */
+  }
+
+  .error {
+    background-color: #f44336; /* Red */
+  }
+
+  .status-indicator {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff; /* Default color, can be overridden */
+    display: inline-block;
+    text-align: center;
+}
+
+.status-live {
+    background-color: #28a745; /* Green for live status */
+}
+
+.status-scheduled {
+    background-color: #ffc107; /* Yellow for scheduled status */
+    color: #333; /* Dark text for better readability on yellow background */
+}
+
+.status-completed {
+    background-color: #dc3545; /* Red for completed status */
+}
+
+
+/* banner-carousel.component.css */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  padding-top: 43px;
+  overflow: hidden;
+}
+
+.banner-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+
+
+
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+
+}
+
+.image-container {
+  width: 100%; /* Adjust as needed */
+  height: 100%;
+
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px;
+  width: 100%; /* Adjust as needed */
+  height: 100%;
+  grid-auto-rows: auto; /* Allows rows to adjust based on content */
+}
+
+.card-grid .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+}
+
+.card-grid img {
+  max-width: 100%; /* Keeps image within the card width */
+  max-height: 100%; /* Ensures image height doesn't overflow */
+  object-fit: contain; /* Adjusts how the image fits inside the grid */
+  display: block;
+  width: 100%; /* Adjust as needed */
+  height: 100%;
+}
+
+
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  z-index: 10;
+  background: none; /* Remove background */
+}
+
+.carousel-prev {
+  left: 10px;
+  color: white; /* Make the arrow white */
+}
+
+.carousel-next {
+  right: 10px;
+  color: white; /* Make the arrow white */
+}
+
+/* Additional styling to make sure the SVG icons are white */
+.carousel-prev svg path, .carousel-next svg path {
+  fill: white; /* Ensure the SVG paths are white */
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 100%;
+  align-items: center;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.carousel-dots span {
+  background: rgba(253, 253, 253, 0.5);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.carousel-dots .active {
+  background: #ffffff;
+}
+
+.discovery-tab-content {
+  display: flex;
+  justify-content: center; /* Center-aligns items horizontally */
+  align-items: center; /* Center-aligns items vertically */
+  flex-direction: column; /* Stacks children vertically */
+  width: 100%; /* Ensures full width container */
+  height: 100%; /* Ensures full height container */
+}
+
+.card-list-wrapper {
+  display: flex;
+  justify-content: center; /* Center-aligns the card list horizontally */
+  align-items: center; /* Center-aligns the card list vertically */
+  width: 100%; /* Adjust as needed */
+  height: 100%;/* Full width */
+}
+
+
+.about-section {
+  background-color: #f8f9fa; /* Light background color */
+  padding: 20px;
+  text-align: center;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+/* Overall layout setup */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.card-list-item {
+  transition: transform 0.5s ease-in-out; /* Retain the transition */
+  display: flex; /* Use flexbox to align content */
+  flex-direction: column; /* Stack items vertically */
+  height: auto; /* Fixed height; adjust as needed */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.card-list-item img {
+  max-width: 100%; /* Ensure images fit within the card */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.card-list-item .css-1gd5o6a {
+  flex-grow: 1; /* Allow this section to take up available space */
+  overflow: hidden; /* Prevent overflow in this section */
+}
+
+.go-out-container {
+  width: 100%; /* Ensure container takes full width */
+}
+
+

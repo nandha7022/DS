@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<body>
+    <div id="there-you-go">
+        <div *ngIf="loading" class="loading-overlay">
+            <div class="loading-spinner"></div>
+        </div>
+        
+        <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+        
+        <!-- Your existing component content here -->
+        <style>
+            .css-1j5hrwi {
+                padding: 35px; /* Padding on all four sides */
+                margin-bottom: 25px; /* Space between items */
+                border: 2px solid #ddd; /* Optional: Add a border for better visual separation */
+                background-color: #f9f9f9; /* Optional: Add a background color */
+                border-radius: 4px; /* Optional: Add rounded corners */
+                position: relative;
+            }
+            .category-list {
+                margin: 20px 0;
+            }
+            .performance-item {
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                background-color: #f9f9f9;
+                border-radius: 4px;
+                position: relative;
+            }
+            .delete-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 16px;
+                color: red;
+            }
+            .save-button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: green;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+        </style>
+        <h2 class="ui center aligned header">Configure Event Performances Order</h2>
+        <button *ngIf="HostAccess" class="save-button" (click)="emailEventSchedule()">Trigger Email</button>
+        <div class="css-1j5hrwi">
+            <div *ngFor="let category of eventOrder?.categoryOrder">
+                <h2>{{ category.category }}</h2>
+                <div cdkDropListGroup>
+                    <div cdkDropList [cdkDropListData]="category.performances" class="category-list" (cdkDropListDropped)="drop($event, category)">
+                        <div *ngFor="let performance of category.performances" cdkDrag class="performance-item">
+                            <button *ngIf="HostAccess" class="delete-button" (click)="deletePerformance(category, performance)">X</button>
+                            <p>{{ performance.teamName }} - Order: {{ performance.order }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button *ngIf="HostAccess" class="save-button" (click)="saveOrder()">Save</button>
+        </div>
+    </div>
+</body>
+</html>

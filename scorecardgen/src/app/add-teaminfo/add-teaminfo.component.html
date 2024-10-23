@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div style="overflow: auto; height: 100vh;">
+        <div *ngIf="loading" class="loading-overlay">
+            <div class="loading-spinner"></div>
+          </div>
+          
+          <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+          <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+          
+          <!-- Your existing component content here -->
+          
+        <div class="ui text container" style="padding-bottom: 110px;">
+            <div class="ui center aligned middle aligned grid" style="height: 100%; padding-top: 8px;">
+                <div class="row">
+                    <div class="column">
+                        <div class="ui center aligned header">Configure Competition<div class="sub header">Enter the
+                                event Participents , Coaches Details</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui small fluid ordered one steps">
+                <a class="active pending step">
+                    <div class="content">
+                        <div class="title">Competition Participents Details</div>
+                        <div class="description">Enter all Details of Competition
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div></div>
+            <form class="ui form" *ngFor="let team of teams; let i = index">
+                <div class="ui segment">
+                    <h3>Team {{ i + 1 }} Information :</h3>
+
+                    <div class="ui basic segment ui grid">
+                        <div class="row">
+                            <div class="column">
+                                <div class="ui segment ui stackable grid">
+                                    <div class="two column row">
+                                        <div class="column">
+                                            <div class="field required">
+                                                <label for="team-name-{{i}}">Team Name : </label>
+                                                <input maxlength="50" placeholder="Your Team Name " id="team-name-{{i}}"
+                                                    name="team-name-{{i}}" class="form-control" required="" type="text"
+                                                    [(ngModel)]="team.teamName.name">
+                                            </div>
+                                            <div class="field required">
+                                                <label for="teamRepresentativeEmail-name-{{i}}">Team Representative Name
+                                                    : </label>
+                                                <input type="text" id="teamRepresentativeEmail-name-{{i}}"
+                                                    name="teamRepresentativeEmail-name-{{i}}" required="" class="form-control"
+                                                    [(ngModel)]="team.teamRepresentativeEmail.name">
+                                                <label for="teamRepresentativeEmail-email-{{i}}">Team Representative
+                                                    Email : </label>
+                                                <input type="text" id="teamRepresentativeEmail-email-{{i}}"
+                                                    name="teamRepresentativeEmail-email-{{i}}" class="form-control"
+                                                    [(ngModel)]="team.teamRepresentativeEmail.email">
+                                            </div>
+                                            <div class="field">
+                                                <label for="coach-name-{{i}}">Coach Name : </label>
+                                                <input type="text" id="coach-name-{{i}}" name="coach-name-{{i}}"
+                                                    class="form-control" [(ngModel)]="team.coachName.name">
+                                                <label for="coach-email-{{i}}">Coach Email : </label>
+                                                <input type="text" id="coach-email-{{i}}" name="coach-email-{{i}}"
+                                                    class="form-control" [(ngModel)]="team.coachName.email">
+                                            </div>
+                                            <div class="field">
+                                                <label for="director-name-{{i}}">Director Name : </label>
+                                                <input type="text" id="director-name-{{i}}" name="director-name-{{i}}"
+                                                    class="form-control" [(ngModel)]="team.DirectorName.name">
+                                                <label for="director-email-{{i}}">Director Email : </label>
+                                                <input type="text" id="director-email-{{i}}" name="director-email-{{i}}"
+                                                    class="form-control" [(ngModel)]="team.DirectorName.email">
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <h4>Team Members</h4>
+                                            <div *ngFor="let teamMember of team.teamMembers; let j = index">
+                                                <div class="two column grid">
+                                                    <div class="column">
+
+                                                        <label for="team-member-name-{{i}}-{{j}}">Team Member {{ j +
+                                                            1
+                                                            }} : </label>
+                                                        <div>
+                                                            <div class="container">
+                                                                <input type="text" id="team-member-name-{{i}}-{{j}}"
+                                                                    name="team-member-name-{{i}}-{{j}}"
+                                                                    class="form-control"
+                                                                    [(ngModel)]="team.teamMembers[j].name">
+                                                                <span class="close-icon"
+                                                                    (click)="removeTeamMember(i, j)">&times;</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <button type="button" class="ui green button" (click)="addTeamMember(i)">Add
+                                                Team
+                                                Member</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <!-- Button to add new team -->
+            <div class="btn-success">
+                <button type="button" class="ui grey button" (click)="addTeam()">Add Team</button>
+            </div>
+            <div class="btn-ConfigurJuges"
+            >
+            <button type="button" class="ui grey button" [class.disabled]="isTeamFormValid()" (click)="saveTeamsData()"> Save and Next Configur Judges</button>
+          </div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

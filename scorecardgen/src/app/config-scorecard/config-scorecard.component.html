@@ -1,0 +1,71 @@
+<body>
+<div *ngIf="loading" class="loading-overlay">
+  <div class="loading-spinner"></div>
+</div>
+
+<div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+<div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+
+<div class="scorecard-config-container">
+  <h2>Scorecard Configuration</h2>
+
+  <!-- Loop through each category -->
+  <div *ngFor="let categoryMeta of scoringParameters; let i = index">
+    <h2>Category: {{ categoryMeta.category }}</h2>
+
+    <!-- Form to Add Scoring Parameters for the specific category -->
+    <form (ngSubmit)="addScoringParameter(i, newParameters[i])" class="scoring-form">
+      <div class="scoring-parameter-form">
+        <input
+          type="text"
+          [(ngModel)]="newParameters[i].name"
+          name="name-{{ i }}"
+          placeholder="Parameter Name"
+          required
+          class="form-input"
+        />
+
+        <input
+          type="number"
+          [(ngModel)]="newParameters[i].maxScore"
+          name="maxScore-{{ i }}"
+          placeholder="Max Score"
+          required
+          class="form-input"
+        />
+
+        <input
+          type="text"
+          [(ngModel)]="newParameters[i].description"
+          name="description-{{ i }}"
+          placeholder="Description"
+          class="form-input"
+        />
+
+        <button type="submit" class="add-button">Add Parameter</button>
+      </div>
+    </form>
+
+    <!-- Display List of Scoring Parameters for the specific category -->
+    <div *ngFor="let parameter of categoryMeta.parameters; let j = index" class="parameter-item">
+      <span><strong>{{ parameter.name }}</strong> - Max Score: {{ parameter.maxScore }}</span>
+      <p>{{ parameter.description }}</p>
+
+      <!-- Remove Parameter Button -->
+      <button (click)="removeScoringParameter(i, j)" class="remove-button">Remove</button>
+    </div>
+
+    <!-- Display message if no parameters are added -->
+    <p *ngIf="categoryMeta.parameters.length === 0">No scoring parameters added yet for {{ categoryMeta.category }}.</p>
+  </div>
+
+  <!-- Save Button -->
+  <button (click)="saveScoringParameters()" class="save-button" >
+    Save Parameters
+  </button>
+
+  <!-- Success and Error Messages -->
+  <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+</div>
+</body>

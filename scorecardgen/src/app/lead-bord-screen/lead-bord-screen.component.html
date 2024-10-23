@@ -1,0 +1,37 @@
+<!-- leaderboard.component.html -->
+<div class="ui container">
+  <div *ngIf="loading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+  
+  <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+  
+  <!-- Your existing component content here -->
+  
+    <div class="ui centered header">
+      <h2>Leaderboard</h2>
+    </div>
+    <div *ngFor="let category of leaderboard | keyvalue">
+      <h3 style="text-align: center; margin: 20px 0;">{{ category.key }}</h3>
+<!-- Display the category name -->
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Team Name</th>
+            <th>Total Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of category.value; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ entry.teamName }}</td> <!-- Display team name instead of teamId -->
+            <td>{{ entry.total_score }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+  

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<body>
+    <div id="there-you-go">
+
+        <div *ngIf="loading" class="loading-overlay">
+            <div class="loading-spinner"></div>
+        </div>
+        <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+        <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+
+        <!-- Your existing component content here -->
+
+        <div class="css-1j5hrwi">
+            <main>
+                <div class="css-5czy92">
+                    <div class="css-1cc2js5">
+                        <div class="css-w10m3q">
+                            <div class=" css-6nvtdu">
+                                <div class="css-79elbk">
+                                    <div><label class="btn btn-default p-0">
+                                            <input type="file" accept="image/*" (change)="onFileSelected($event)" />
+                                        </label></div>
+                                    <div *ngIf="imageUrl" ngSkipHydration>
+                                        <figure class=" css-0">
+                                            <picture>
+                                                <img [src]="imageUrl" alt="Uplode Image" data-testid="ad-banner-image"
+                                                    data-ref="edp_event_banner_image" />
+
+                                            </picture>
+                                        </figure>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="css-1cyi4oq">
+                            <div class="css-1gxwuw0">
+                                <div class=" css-1k23y97">
+                                    <div class="css-b3qn21">
+                                        <div class="css-k008qs">
+                                            <div>
+                                                <h1 class="css-1mg2664" data-ref="edp_event_title_desktop"
+                                                    contenteditable="true">{{eventTitle}}</h1>
+                                                <div class="css-1yoi8sp">
+                                                    <div class="css-1jbz40t">
+                                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M3.86772 1.09399H12.1773C13.1793 1.09399 14 1.8863 14 2.84628V14.7306C14 15.5316 13.4747 16.094 12.7593 16.094C12.4131 16.094 12.0908 15.9579 11.7975 15.7158L8.09161 12.6643C8.08867 12.6619 8.06217 12.6531 8.02796 12.6531C8.0165 12.6531 8.00588 12.6541 7.99667 12.6555L7.96295 12.6651L4.24659 15.7157C3.95542 15.9562 3.61666 16.094 3.27026 16.094C2.87019 16.094 2.49709 15.9072 2.26744 15.5886C2.09267 15.346 2 15.051 2 14.7305V2.84628C2 1.88762 2.86383 1.09399 3.86772 1.09399ZM12.1792 2.2478H3.86955C3.51157 2.2478 3.19531 2.53836 3.19531 2.84624V14.7305C3.19531 14.8188 3.21555 14.8832 3.2485 14.9289C3.25409 14.9367 3.26093 14.9401 3.27209 14.9401C3.31322 14.9401 3.38574 14.9106 3.47462 14.8372L7.19099 11.7866C7.41788 11.5993 7.7208 11.4992 8.0298 11.4992C8.33882 11.4992 8.64138 11.5993 8.86789 11.7864L12.5737 14.8378C12.6668 14.9146 12.7272 14.9401 12.7612 14.9401C12.7887 14.9401 12.8084 14.9191 12.8084 14.7305V2.84624C12.8084 2.5239 12.5224 2.2478 12.1792 2.2478Z"
+                                                                fill="#0C172F"></path>
+                                                            <path d="M3.64453 5.59389H13.3588" stroke="#0C172F"
+                                                                stroke-linecap="square"></path>
+                                                        </svg>
+                                                    </div>
+<!--                                                    <div *ngFor="let option of options; let i = index">-->
+<!--                                                        <input type="checkbox" [id]="'option' + i"-->
+<!--                                                            [(ngModel)]="selectedOptions[i]" />-->
+<!--                                                        <label [for]="'option' + i">{{ option }}</label>-->
+<!--                                                    </div>-->
+<!--                                                    <div>-->
+<!--                                                        <input type="checkbox" id="enterText"-->
+<!--                                                            [(ngModel)]="isTextChecked" />-->
+<!--                                                        <label for="enterText">Enter Text</label>-->
+<!--                                                        <input type="text" *ngIf="isTextChecked"-->
+<!--                                                            [(ngModel)]="enteredText"-->
+<!--                                                            placeholder="Enter your text here" />-->
+<!--                                                    </div>-->
+
+                                                  <div *ngFor="let text of categoryList; let i = index; trackBy: trackByIndex">
+                                                    <input type="text" [(ngModel)]="categoryList[i]" placeholder="Enter text {{i + 1}}" />
+                                                    <button (click)="removeTextField(i)">Remove</button>
+                                                  </div>
+
+                                                  <button (click)="addTextField()">Add Text Field</button>
+
+                                                  <div>
+                                                    <p>Entered Text List:</p>
+                                                    <ul>
+                                                      <li *ngFor="let text of categoryList">{{ text }}</li>
+                                                    </ul>
+                                                  </div>
+
+                                                  <!--<select [(ngModel)]="selectedCategory"
+                                                     >
+                                                      <option value="" disabled selected>Select category</option>
+                                                      <option value="Ballet">Ballet</option>
+                                                      <option value="Tap">Tap</option>
+                                                      <option value="Jazz">Jazz</option>
+                                                      <option value="Contemporary">Contemporary</option>
+                                                      <option value="Modern">Modern</option>
+                                                      <option value="Hip hop">Hip hop</option>
+                                                      <option value="Musical theater">Musical theater</option>
+                                                  </select>
+                                               -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="css-ois8gk">
+                                                <div class="css-1jbz40t">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- SVG Path -->
+                                                    </svg>
+                                                </div>
+                                                <p data-ref="edp_event_datestring_desktop" class="css-1uf8g5w"
+                                                    contenteditable="true">{{eventDateString}}</p>
+                                            </div>
+                                            <div class="css-ois8gk">
+                                                <div class="css-1jbz40t">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- SVG Path -->
+                                                    </svg>
+                                                </div>
+                                                <p data-ref="edp_event_venue_desktop" class="css-1uf8g5w"
+                                                    contenteditable="true">{{eventTitleVenue}}</p>
+                                            </div>
+                                        </div>
+                                        <div aria-label="BUY NOWbuttonDouble tap to activate" role="region"
+                                            class="css-kccjyv">
+                                            <div class="css-1sn6u2x">
+                                                <div class="css-uo4b3v">
+                                                    <div class="css-2tezne">
+                                                        <svg width="15" height="16" viewBox="0 0 15 16" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <!-- SVG Path -->
+                                                        </svg>
+                                                    </div>
+                                                    <div class="css-1s8djm3">
+                                                        <p data-ref="edp_price_string_desktop" class="css-1rgjqr3"
+                                                            contenteditable="true">
+                                                            {{eventPriceString}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="css-qxlnel"><button (click)="saveData()">Save Event</button></div>
+                                    <div class="css-qxlnel"><button (click)="saveandNavifatetoTeamsInfo()">Enter
+                                            Competition Team Information </button></div>
+                                </div>
+                            </div>
+                        </div>
+                        <style data-emotion-css="31oj63">
+                            .css-31oj63 {
+                                width: 50%;
+                                margin-left: 10vw;
+                                margin-top: 30px;
+                            }
+
+
+
+                            .css-31oj63 .react-tabs__tab-list li {
+                                display: inline-block;
+                                position: relative;
+                                width: auto;
+                                height: 100%;
+                                text-align: center;
+                                overflow: hidden;
+                                font-weight: 400;
+                                cursor: pointer;
+                                line-height: 60px;
+                                color: #abadb3;
+                                margin-right: 30px;
+                                font-size: 21px;
+                                line-height: 28px;
+                            }
+
+                            .css-31oj63 .react-tabs__tab-list .active-tab {
+                                color: #0D0F13;
+                                border-bottom: 2px solid #000000;
+                            }
+                        </style>
+                        <div class="css-31oj63" data-tabs="true">
+                            <ul role="tablist" class="react-tabs__tab-list">
+                                <li class="react-tabs__tab active-tab" role="tab" id="react-tabs-0" aria-selected="true"
+                                    aria-disabled="false" aria-controls="react-tabs-1" tabindex="0">
+                                    <style data-emotion-css="yoenp9">
+                                        .css-yoenp9 {
+                                            font-weight: 700;
+                                            display: inline-block;
+                                            height: 100%;
+                                        }
+                                    </style><span class="css-yoenp9">About</span>
+                                </li>
+                            </ul>
+                            <div class="react-tabs__tab-panel tab-content" role="tabpanel" id="react-tabs-1"
+                                aria-labelledby="react-tabs-0">
+                                <div>
+                                    <style data-emotion-css="k0vv7i">
+                                        .css-k0vv7i {
+                                            display: block;
+                                        }
+                                    </style>
+                                    <style data-emotion-css="gsyh3k">
+                                        .css-gsyh3k {
+                                            margin: 30px auto;
+                                        }
+                                    </style>
+
+                                    <style data-emotion-css="3loask">
+                                        .css-3loask {
+                                            margin-top: 30px;
+                                        }
+                                    </style>
+                                    <div class="css-3loask">
+                                        <style data-emotion-css="end10d">
+                                            .css-end10d {
+                                                margin-top: 30px;
+                                            }
+                                        </style>
+
+                                    </div>
+                                    <style data-emotion-css="19okvs3">
+
+                                    </style>
+                                    <style data-emotion-css="twmkck">
+                                        .css-twmkck span {
+                                            font-size: 19px;
+                                            margin-bottom: 30px;
+                                            margin-top: 30px;
+                                            font-weight: bold;
+                                            color: #202226;
+                                            display: block;
+                                        }
+                                    </style>
+                                    <section class="text text-left css-twmkck"><span>About the Event</span></section>
+                                    <style data-emotion-css="1rmq8t0">
+                                        .css-1rmq8t0 span {
+                                            font-size: 19px;
+                                            margin-bottom: 30px;
+                                            margin-top: 30px;
+                                            font-weight: bold;
+                                            color: #202226;
+                                            display: block;
+                                        }
+                                    </style>
+                                  <section id="section-venue" class="venue-wrapper">
+                                    <section class="text text-left custom-widget-title css-1rmq8t0">
+                                      <span>Venue</span>
+                                    </section>
+                                    <section class="text text-align-left custom-widget-title" contenteditable="true" #venueName>
+                                      <h3>AT & T Stadium</h3>
+                                      <p>1 AT&T Way, Arlington, TX 76011, United States</p>
+                                    </section>
+                                    <br />
+                                    <section class="text text-align-left custom-widget-title" contenteditable="true" #directionUrl contenteditable="true" (input)="updateDirectionUrl($event)">
+                                      <p>{{directionUrl}}</p>
+                                    </section>
+                                    <br />
+                                    <a class="css-1gl7gat" [href]="directionUrl" target="_blank">
+                                      <span class="css-159jbjj">GET DIRECTIONS</span>
+                                    </a>
+
+                                    <section class="text text-left css-1rmq8t0">
+                                      <p><strong>Competition Duration: </strong></p>
+                                      <p contenteditable="true" #competitionDuration>9.00 AM to 5.30 PM</p>
+                                      <br /><br />
+                                      <p><strong>Competition Highlights :</strong></p><br />
+                                      <ul contenteditable="true" #competitionHighlights>
+                                        <li *ngFor="let highlight of CompetitionHighlights">{{ highlight }}</li>
+                                      </ul>
+                                      <button (click)="addCompetitionHighlights()">Add</button><br />
+
+                                      <p><strong>Competition Terms & Conditions:</strong></p><br />
+                                      <div class="css-1azmw3s">
+                                        <ul contenteditable="true" #competitionConditions>
+                                          <li *ngFor="let condition of conditions">{{ condition }}</li>
+                                        </ul>
+                                        <button (click)="addNewCondition()">Add Condition</button>
+                                      </div><br />
+
+                                      <p><strong>For Entry:</strong></p><br />
+                                      <ul contenteditable="true" #forEntryRulesdata>
+                                        <li *ngFor="let rule of forEntryRules">{{ rule }}</li>
+                                      </ul>
+                                      <button (click)="addforEntryRules()">Add</button><br /><br />
+                                    </section>
+                                    <button (click)="saveadout(venueName, directionUrl, competitionDuration, competitionHighlights, competitionConditions, forEntryRulesdata)">Save About Section</button>
+                                  </section>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <style data-emotion-css="1cyi4oq">
+                        .css-1cyi4oq {
+                            display: -webkit-box;
+                            display: -webkit-flex;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-flex-direction: column;
+                            -ms-flex-direction: column;
+                            flex-direction: column;
+                        }
+                    </style>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

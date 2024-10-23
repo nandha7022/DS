@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div style="overflow: auto; height: 100vh;">
+        <div *ngIf="loading" class="loading-overlay">
+            <div class="loading-spinner"></div>
+          </div>
+          
+          <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+          <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+          
+          <!-- Your existing component content here -->
+          
+        <div class="ui text container" style="padding-bottom: 110px;">
+            <div class="ui center aligned middle aligned grid" style="height: 100%; padding-top: 8px;">
+                <div class="row">
+                    <div class="column">
+                        <div class="ui center aligned header">Configure Competition Judges<div class="sub header">Enter the
+                                event Judegs Details</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui small fluid ordered one steps">
+                <a class="active pending step">
+                    <div class="content">
+                        <div class="title">Competition Judges Details</div>
+                        <div class="description">Enter all  Judges Details of Competition
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div></div>
+            <form class="ui form" *ngFor="let judge of judges; let i = index">
+                <div class="ui segment">
+                    <h3>Judge {{ i + 1 }} Information :</h3>
+
+                    <div class="ui basic segment ui grid">
+                        <div class="row">
+                            <div class="column">
+                                <div class="ui segment ui stackable grid">
+                                    <div class="two column row">
+                                        <div class="column">
+                                            <div class="field required">
+                                                <label for="judge-name-{{i}}">Judge Name : </label>
+                                                <input maxlength="50" placeholder="Enter Judge  Name " id="judge-name-{{i}}"
+                                                    name="judge-name-{{i}}" class="form-control" required="" type="text"
+                                                    [(ngModel)]="judge.name">
+                                            </div>
+                                            <div class="field">
+                                                <label for="judge-guest-{{i}}">Guest Judge : </label>
+                                                <input type="checkbox" id="judge-guest-{{i}}" name="judge-guest-{{i}}"
+                                                       (change)="toggleGuestJudge(i)">
+                                              </div>
+                                              <div class="field" [class.disabled]="judges[i].guestJugde">
+                                                <label for="judeg-email-{{i}}">Judge Email : </label>
+                                                <input type="text" id="judeg-email-{{i}}" name="jude-email-{{i}}" class="form-control"
+                                                       [(ngModel)]="judges[i].email">
+                                              </div>        
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            <!-- Button to add new team -->
+            <div class="btn-success">
+                <button type="button" class="ui grey button" (click)="addJudge()">Add Judge</button>
+            </div>
+            <div class="btn-success">
+                <button type="button" class="ui grey button" (click)="saveandGenScoreCard()">Save </button>
+            </div>
+            <div class="btn-ConfigurJuges"
+            >
+          </div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

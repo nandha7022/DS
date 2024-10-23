@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div style="overflow: auto; height: auto;">
+        <div *ngIf="loading" class="loading-overlay">
+            <div class="loading-spinner"></div>
+          </div>
+
+          <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+          <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+        <div class="ui text container" style="padding-bottom: 110px;">
+            <div class="ui center aligned middle aligned grid">
+                <div class="row">
+                  <div class="eight wide column">  <div class="ui center aligned header">
+                      <div class="sub header">Team</div>
+                      <div class="ui center aligned header">
+                        <select [(ngModel)]="TeamId" (change)="onChange()">
+                          <option value="{{ team.teamName.id }}" *ngFor="let team of TeamsInfo">{{ team.teamName.name }}</option>
+                        </select>
+                        <div class="sub header"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="eight wide column">  <div class="ui center aligned header">
+                      <div class="sub header">Category</div>
+                      <div class="ui center aligned header">
+                        <select [(ngModel)]="category" (change)="onChange()">
+                          <option value="{{category}}" *ngFor="let category of options">{{ category }}</option>
+                        </select>
+                        <div class="sub header"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="ui small fluid ordered one steps">
+                <a class="active pending step">
+                    <div class="content">
+                        <div class="title">Scoring Elements</div>
+                        <div class="description">Enter score in respective elements
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div></div>
+            <form class="ui form">
+                <div class="ui segment">
+                    <div class="ui basic segment ui grid">
+                        <div class="row">
+                            <div class="column">
+                                <div class="ui segment ui stackable grid">
+                                    <!-- Loop through scorecardMeta to dynamically generate rows -->
+                                    <div class="two column row" *ngFor="let item of ScorecardMeta">
+                                      <!-- Label and Description -->
+                                      <div class="column">
+                                        <div class="field required">
+                                          <label><strong>{{ item.name | titlecase }} :</strong></label>
+                                          <p>{{ item.description }}</p>
+                                        </div>
+                                      </div>
+                                      <!-- Input Field -->
+                                      <div class="column">
+                                        <div class="field required">
+                                          <input
+                                            type="number"
+                                            [placeholder]="'Max Score: ' + item.maxScore"
+                                            [id]="item.name"
+                                            [name]="item.name"
+                                            class="form-control"
+                                            [(ngModel)]="ScoreCard[item.name]"
+                                            [min]="0"
+                                            [max]="item.maxScore"
+                                            (input)="validateScore(item)"
+                                            required
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui segment">
+                    <div class="ui basic segment ui grid">
+                        <div class="row">
+                            <div class="column">
+                                <div class="ui segment ui stackable grid">
+                                    <div class="three column row">
+                                        <!-- Large Comments Input Field -->
+                                        <div class="column comments-column">
+                                            <div class="field required">
+                                                <textarea placeholder="Enter Your Comments" id="comments" name="comments"
+                                                    class="form-control comments" [(ngModel)]="ScoreCard['comments']" rows="5"
+                                                    style="width: 100%;"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- Icon Container -->
+                                        <div class="column icons-container">
+                                            <img src="/assets/icons/start-speaking.svg" alt="Start Speaking" (click)="startListening()">
+                                            <img src="/assets/icons/stop-speaking.svg" alt="Stop Speaking" (click)="stopListening()">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <!-- Button to add new team -->
+            <style data-emotion-css="5m1des">
+                .css-5m1des {
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-align-items: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-flex: 1;
+                    -ms-flex: 1;
+                    flex: 1;
+                    border-radius: 6px;
+                }
+
+                @media screen and (min-width:64em) {
+                    .css-5m1des {
+                        -webkit-flex: 3;
+                        -ms-flex: 3;
+                        flex: 3;
+                    }
+                }
+            </style>
+
+            <div class="css-5m1des">
+                <style data-emotion-css="10lu0qa">
+                    .css-10lu0qa {
+                        width: 100%;
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                        font-size: 21px;
+                        padding: 8px 18px;
+                        max-height: 42px;
+                        text-transform: uppercase;
+                        white-space: nowrap;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        background-color: #ec1066;
+                        font-stretch: condensed;
+                        font-family: korolev-condensed, sans-serif;
+                        margin-top: 10px;
+                        margin-bottom: 20px; /* Add margin to the buttons */
+                    }
+
+                    @media screen and (max-width:34.9em) {
+                        .css-10lu0qa {
+                            font-size: 24px;
+                            padding: 6px 24px;
+                            margin-bottom: 20px;
+                        }
+                    }
+
+                    @media screen and (min-width:35em) and (max-width:79.9em) {
+                        .css-10lu0qa {
+                            font-size: 16px;
+                            padding: 8px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                </style>
+                <p> </p>
+                <a (click)="submitScorecard()" class="css-10lu0qa">Submit Score</a>
+            </div>
+
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

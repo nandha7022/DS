@@ -1,0 +1,81 @@
+<div>
+  <div *ngIf="loading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+  <div id="modalOverlay" class="page-overlay" *ngIf="isModalOpen">
+
+    <div *ngIf="!isAuthenticated" class="standard-modal login-modal" id="modalUi" role="dialog"
+      aria-labelledby="modalTitle" aria-describedby="modalDescription">
+      <div class="modal-content">
+        <div class="modal-head">
+          <h3 id="modalTitle">{{ isCreateAccount ? 'Create Account' : 'Hey There!' }}</h3>
+          <p id="modalDescription">
+            {{ isCreateAccount ? 'Create an account to join the fun and stay updated.' : 'Sign in to view competitions,
+            register for competitions, save and share your favorite events, and much more.' }}
+          </p>
+        </div>
+        <div class="modal-action">
+
+          <div *ngIf="!isCreateAccount">
+            <input type="text" placeholder="Enter your email address" class="css-1536zln email-input"
+              [(ngModel)]="email">
+          </div>
+          <div *ngIf="!isCreateAccount">
+            <input type="password" placeholder="Enter your password" class="css-1536zln password-input"
+              [(ngModel)]="password">
+          </div>
+          <div *ngIf="isCreateAccount">
+            <div class="input-group">
+              <input type="text" placeholder="Enter your email address" class="css-1536zln email-input"
+                [(ngModel)]="email">
+              <button (click)="sendOtp()" class="css-1536zln">Send OTP</button>
+              <input
+              type="text"
+              placeholder="Enter OTP"
+              class="css-1536zln otp-input"
+              [(ngModel)]="emailOtp"
+            />
+            </div>
+            <div class="toggle-group">
+              <label>
+                <input
+                  type="checkbox"
+                  [(ngModel)]="isHostRequestEnabled"
+                  (change)="toggleHostRequest($event)"
+                />
+                Enable Host Request
+              </label>
+            </div>
+            <input type="password" placeholder="Create your password" class="css-1536zln password-input"
+              [(ngModel)]="password">
+            <input type="password" placeholder="Confirm your password" class="css-1536zln password-input"
+              [(ngModel)]="confirmPassword">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="css-1536zln" (click)="isCreateAccount ? validateAndCreateAccount() : login()">{{
+            isCreateAccount ? 'Create Account' : 'Login' }}</button>
+          <button class="css-1536zln" (click)="toggleCreateAccount()">{{ isCreateAccount ? 'Back to Login' : 'Create
+            Account' }}</button>
+        </div>
+      </div>
+      <button id="closeModalButton" class="icon-round icon-close css-s3n4y4" role="button"
+        (click)="closeModal()">×</button>
+    </div>
+    <div *ngIf="isAuthenticated" class="standard-modal login-modal" id="modalUi" role="dialog"
+      aria-labelledby="modalTitle" aria-describedby="modalDescription">
+      <div class="modal-content">
+        <div *ngIf="isAuthenticated">
+          <p>User Name: {{ userName }}</p>
+          <button (click)="logout()">Log Out</button>
+        </div>
+        <button id="closeModalButton" class="icon-round icon-close css-s3n4y4" role="button"
+        (click)="closeModal()">×</button>
+      </div>
+
+    </div>
+  </div>
+</div>

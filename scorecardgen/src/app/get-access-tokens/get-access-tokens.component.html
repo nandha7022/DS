@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div style="overflow: auto; height: 100vh; display: flex; flex-direction: column; align-items: center;">
+    <div *ngIf="loading" class="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+    <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+    <h2 class="ui center aligned header">Judges Access Tokens</h2>
+    <table class="ui celled table">
+      <thead>
+        <tr>
+          <th>Judge Name</th>
+          <th>Token</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let token of TokenDetails; let i = index">
+          <td *ngIf="token.JudgeAccess === true">{{ token.judgeName }}</td>
+          <td *ngIf="token.JudgeAccess === true">{{ token.TokenId }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

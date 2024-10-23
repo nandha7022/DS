@@ -1,0 +1,60 @@
+.close-icon {
+    position: relative; /* Make the icon positionable within the container */
+    top: 0.5rem; /* Position the icon at the top */
+    right: 0.5rem; /* Position the icon at the right */
+    font-size: 1.2rem; /* Adjust the size of the "X" */
+    color: #ccc; /* Set a light gray color for the icon */
+    cursor: pointer; /* Indicate interactivity with a pointer cursor */
+    transition: all 0.2s ease-in-out; /* Add smooth transitions */
+  }
+  
+  .close-icon:hover {
+    color: #888; /* Change icon color on hover */
+  }
+
+/* your-component.component.css */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it is above other content */
+}
+
+.loading-spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.success {
+  background-color: #4CAF50; /* Green */
+}
+
+.error {
+  background-color: #f44336; /* Red */
+}

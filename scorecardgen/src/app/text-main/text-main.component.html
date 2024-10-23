@@ -1,0 +1,13 @@
+<body>
+    <button id="startButton" (click)="startListening()">Start Speaking</button>
+    <button id="stopButton">Stop Speaking </button>
+
+    <div class="field required">
+        <label for="Comments-id">Comments : </label>
+        <textarea maxlength="50" placeholder="Enter Comments  " id="Comments-id" name="Comments-id" class="form-control"
+            required="" type="text" (ngModel)="results">{{results}}</textarea>
+        <p>{{results}}</p>
+    </div>
+
+
+</body>

@@ -1,0 +1,102 @@
+<div>
+    <div id="modalOverlay" class="page-overlay">
+        <div *ngIf="loading" class="loading-overlay">
+            <div class="loading-spinner"></div>
+          </div>
+          
+          <div *ngIf="successMessage" class="notification success">{{ successMessage }}</div>
+          <div *ngIf="errorMessage" class="notification error">{{ errorMessage }}</div>
+          
+          <!-- Your existing component content here -->
+          
+        <div class="standard-modal login-modal" id="modalUi" role="dialog">
+            <div class="modal-content">
+                <div class="modal-head">
+                    <h3>Hey There!</h3>
+                    <p>Select Judge from the drop Down and Enter Respective Token </p>
+                </div>
+                <div class="modal-action">
+                        <div>
+                            <div>
+                                <select [(ngModel)]="Judgeid" class="large-dropdown" (change)="onChangeJudge()">
+                                    <option value="{{ judge.id }}" *ngFor="let judge of JudegsInfo">{{ judge.name }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <input [(ngModel)]="TokenId" type="text" placeholder="Enter your Token for Role Based Access" class="css-1536zln token-input input-margin">
+                            </div>
+                        </div>
+                        <style data-emotion-css="5m1des">
+                            .css-5m1des {
+                                display: -webkit-box;
+                                display: -webkit-flex;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-align-items: center;
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                -webkit-flex: 1;
+                                -ms-flex: 1;
+                                flex: 1;
+                                border-radius: 6px;
+                            }
+
+                            @media screen and (min-width:64em) {
+                                .css-5m1des {
+                                    -webkit-flex: 3;
+                                    -ms-flex: 3;
+                                    flex: 3;
+                                }
+                            }
+                        </style>
+
+                        <div class="css-5m1des">
+                            <style data-emotion-css="10lu0qa">
+                                .css-10lu0qa {
+                                    width: 100%;
+                                    color: white;
+                                    font-weight: bold;
+                                    text-align: center;
+                                    font-size: 21px;
+                                    padding: 8px 18px;
+                                    max-height: 42px;
+                                    text-transform: uppercase;
+                                    white-space: nowrap;
+                                    border-radius: 6px;
+                                    cursor: pointer;
+                                    background-color: #ec1066;
+                                    font-stretch: condensed;
+                                    font-family: korolev-condensed, sans-serif;
+                                    margin-top: 10px;
+                                    margin-bottom: 20px; /* Add margin to the buttons */
+                                }
+
+                                @media screen and (max-width:34.9em) {
+                                    .css-10lu0qa {
+                                        font-size: 24px;
+                                        padding: 6px 24px;
+                                        margin-bottom: 20px;
+                                    }
+                                }
+
+                                @media screen and (min-width:35em) and (max-width:79.9em) {
+                                    .css-10lu0qa {
+                                        font-size: 16px;
+                                        padding: 8px;
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                            </style>
+                            <p> </p>
+                            <a (click)="ValidateAccessTokens()" class="css-10lu0qa">Validate Access Tokens</a>
+                        </div>
+                        <a *ngIf="isValidated()"  (click)="NavigateToScoreCards()" class="css-10lu0qa">Go to Score Card</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

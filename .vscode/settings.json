@@ -1,0 +1,9 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/912a7723-ab8c-4298-8367-7bd5a85dc419/resourceGroups/scorecardgen_group/providers/Microsoft.Web/sites/scorecardgen",
+    "appService.deploySubpath": "scorecardgen/dist/scorecardgen",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.showBuildDuringDeployPrompt": false
+}

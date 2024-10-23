@@ -1,0 +1,83 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+  }
+
+  .css-1rjpcfj-home-logo {
+    box-sizing: border-box;
+    display: block;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    background: transparent url(/assets/icons/LogoNavigator.png) center 45% / contain no-repeat;
+    width: 151.25px;
+    height: 73.25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Container for side menu */
+.side-menu {
+  position: flex;
+  margin-top: 73.25px;
+  width: 100%; /* Fixed width for the navigation bar */
+  height: 100%;
+  background-color: white; /* Set the background to white */
+  color: black;
+  overflow-y: auto;
+  transition: 0.3s;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it is above the content */
+}
+
+/* Side menu open state */
+.side-menu.open {
+  left: 0;
+}
+
+/* Style for links inside side menu */
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  padding: 10px 0;
+}
+
+.side-menu a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.side-menu a:hover {
+  background-color: #e0e0e0;
+}
+
+/* Toggle button style */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100; /* Above the side menu */
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Main content adjustments */
+.main-content {
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+/* Adjust content when menu is open (optional) */
+.main-content.menu-open {
+  margin-left: 0; /* No margin adjustment needed since the side menu is full screen */
+}
